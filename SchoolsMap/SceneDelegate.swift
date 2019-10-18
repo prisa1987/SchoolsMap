@@ -23,12 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                window = UIWindow(frame: windowScene.coordinateSpace.bounds)
                window?.windowScene = windowScene
 
-                let navigationController = MapViewController()
-//               let builder = FeedModuleBuilder()
-//               guard let viewController = builder.build(navigationController: navigationController)
-//                   else { return }
-              
-//               navigationController.viewControllers = [viewController]
+               let navigationController = MapViewController()
                self.window?.rootViewController = navigationController
                self.window?.makeKeyAndVisible()
 
