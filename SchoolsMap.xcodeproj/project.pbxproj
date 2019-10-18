@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		314CE7C7767D2DB89301AF18 /* Pods_SchoolsMapTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB1F933B111F9805D5C02D64 /* Pods_SchoolsMapTests.framework */; };
+		B53171CD2359CFC2005D3440 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53171CC2359CFC2005D3440 /* MapViewController.swift */; };
 		B55D4ED42359CB39009DCFE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55D4ED32359CB39009DCFE3 /* AppDelegate.swift */; };
 		B55D4ED62359CB39009DCFE3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55D4ED52359CB39009DCFE3 /* SceneDelegate.swift */; };
 		B55D4ED82359CB39009DCFE3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55D4ED72359CB39009DCFE3 /* ContentView.swift */; };
@@ -14,6 +16,7 @@
 		B55D4EDD2359CB3A009DCFE3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B55D4EDC2359CB3A009DCFE3 /* Preview Assets.xcassets */; };
 		B55D4EE02359CB3A009DCFE3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B55D4EDE2359CB3A009DCFE3 /* LaunchScreen.storyboard */; };
 		B55D4EEB2359CB3A009DCFE3 /* SchoolsMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55D4EEA2359CB3A009DCFE3 /* SchoolsMapTests.swift */; };
+		FC6F60E9C7980DCB679C33B9 /* Pods_SchoolsMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD4F4D8D4AFF758AEBB240A /* Pods_SchoolsMap.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +30,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		29663ED3A156439FEFBA07C0 /* Pods-SchoolsMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SchoolsMap.release.xcconfig"; path = "Target Support Files/Pods-SchoolsMap/Pods-SchoolsMap.release.xcconfig"; sourceTree = "<group>"; };
+		5850ACB0284FCFD6C75F0943 /* Pods-SchoolsMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SchoolsMap.debug.xcconfig"; path = "Target Support Files/Pods-SchoolsMap/Pods-SchoolsMap.debug.xcconfig"; sourceTree = "<group>"; };
+		6AD4F4D8D4AFF758AEBB240A /* Pods_SchoolsMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SchoolsMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		925B74FABCE91B52CB41BA25 /* Pods-SchoolsMapTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SchoolsMapTests.release.xcconfig"; path = "Target Support Files/Pods-SchoolsMapTests/Pods-SchoolsMapTests.release.xcconfig"; sourceTree = "<group>"; };
+		AB1F933B111F9805D5C02D64 /* Pods_SchoolsMapTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SchoolsMapTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B53171CC2359CFC2005D3440 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		B55D4ED02359CB39009DCFE3 /* SchoolsMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SchoolsMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B55D4ED32359CB39009DCFE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B55D4ED52359CB39009DCFE3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +47,7 @@
 		B55D4EE62359CB3A009DCFE3 /* SchoolsMapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SchoolsMapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B55D4EEA2359CB3A009DCFE3 /* SchoolsMapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolsMapTests.swift; sourceTree = "<group>"; };
 		B55D4EEC2359CB3A009DCFE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4B008B20AFB7BAD6AAB0690 /* Pods-SchoolsMapTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SchoolsMapTests.debug.xcconfig"; path = "Target Support Files/Pods-SchoolsMapTests/Pods-SchoolsMapTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC6F60E9C7980DCB679C33B9 /* Pods_SchoolsMap.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,18 +63,41 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				314CE7C7767D2DB89301AF18 /* Pods_SchoolsMapTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3938DD97E64C3FE60C06E39A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5850ACB0284FCFD6C75F0943 /* Pods-SchoolsMap.debug.xcconfig */,
+				29663ED3A156439FEFBA07C0 /* Pods-SchoolsMap.release.xcconfig */,
+				F4B008B20AFB7BAD6AAB0690 /* Pods-SchoolsMapTests.debug.xcconfig */,
+				925B74FABCE91B52CB41BA25 /* Pods-SchoolsMapTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		7D416F0E48A65B162C17503E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6AD4F4D8D4AFF758AEBB240A /* Pods_SchoolsMap.framework */,
+				AB1F933B111F9805D5C02D64 /* Pods_SchoolsMapTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B55D4EC72359CB39009DCFE3 = {
 			isa = PBXGroup;
 			children = (
 				B55D4ED22359CB39009DCFE3 /* SchoolsMap */,
 				B55D4EE92359CB3A009DCFE3 /* SchoolsMapTests */,
 				B55D4ED12359CB39009DCFE3 /* Products */,
+				3938DD97E64C3FE60C06E39A /* Pods */,
+				7D416F0E48A65B162C17503E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,6 +115,7 @@
 			children = (
 				B55D4ED32359CB39009DCFE3 /* AppDelegate.swift */,
 				B55D4ED52359CB39009DCFE3 /* SceneDelegate.swift */,
+				B53171CC2359CFC2005D3440 /* MapViewController.swift */,
 				B55D4ED72359CB39009DCFE3 /* ContentView.swift */,
 				B55D4ED92359CB3A009DCFE3 /* Assets.xcassets */,
 				B55D4EDE2359CB3A009DCFE3 /* LaunchScreen.storyboard */,
@@ -114,9 +149,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B55D4EEF2359CB3A009DCFE3 /* Build configuration list for PBXNativeTarget "SchoolsMap" */;
 			buildPhases = (
+				9967CF653C984B4348B92C4F /* [CP] Check Pods Manifest.lock */,
 				B55D4ECC2359CB39009DCFE3 /* Sources */,
 				B55D4ECD2359CB39009DCFE3 /* Frameworks */,
 				B55D4ECE2359CB39009DCFE3 /* Resources */,
+				4852F1E30EDDDF28DC0AF329 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,6 +168,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B55D4EF22359CB3A009DCFE3 /* Build configuration list for PBXNativeTarget "SchoolsMapTests" */;
 			buildPhases = (
+				3BC93E7CECD798EB01D90D8D /* [CP] Check Pods Manifest.lock */,
 				B55D4EE22359CB3A009DCFE3 /* Sources */,
 				B55D4EE32359CB3A009DCFE3 /* Frameworks */,
 				B55D4EE42359CB3A009DCFE3 /* Resources */,
@@ -203,6 +241,70 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3BC93E7CECD798EB01D90D8D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SchoolsMapTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4852F1E30EDDDF28DC0AF329 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SchoolsMap/Pods-SchoolsMap-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SchoolsMap/Pods-SchoolsMap-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SchoolsMap/Pods-SchoolsMap-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9967CF653C984B4348B92C4F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SchoolsMap-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B55D4ECC2359CB39009DCFE3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -210,6 +312,7 @@
 			files = (
 				B55D4ED42359CB39009DCFE3 /* AppDelegate.swift in Sources */,
 				B55D4ED62359CB39009DCFE3 /* SceneDelegate.swift in Sources */,
+				B53171CD2359CFC2005D3440 /* MapViewController.swift in Sources */,
 				B55D4ED82359CB39009DCFE3 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -360,6 +463,7 @@
 		};
 		B55D4EF02359CB3A009DCFE3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5850ACB0284FCFD6C75F0943 /* Pods-SchoolsMap.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -379,6 +483,7 @@
 		};
 		B55D4EF12359CB3A009DCFE3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29663ED3A156439FEFBA07C0 /* Pods-SchoolsMap.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -398,6 +503,7 @@
 		};
 		B55D4EF32359CB3A009DCFE3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4B008B20AFB7BAD6AAB0690 /* Pods-SchoolsMapTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -419,6 +525,7 @@
 		};
 		B55D4EF42359CB3A009DCFE3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 925B74FABCE91B52CB41BA25 /* Pods-SchoolsMapTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

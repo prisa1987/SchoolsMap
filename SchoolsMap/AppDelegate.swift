@@ -1,20 +1,14 @@
-//
-//  AppDelegate.swift
-//  SchoolsMap
-//
-//  Created by prisa dumrongsiri on 18/10/2562 BE.
-//  Copyright © 2562 pd. All rights reserved.
-//
 
 import UIKit
+import GoogleMaps
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
+    let GOOGLE_MAP_API_KEY = "AIzaSyCvJfmWNw7X6AOIZHZcdQcm_E9hrqILwdM"
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        GMSServices.provideAPIKey(GOOGLE_MAP_API_KEY)
         return true
     }
 
