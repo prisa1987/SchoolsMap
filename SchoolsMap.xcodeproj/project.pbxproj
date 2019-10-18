@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		314CE7C7767D2DB89301AF18 /* Pods_SchoolsMapTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB1F933B111F9805D5C02D64 /* Pods_SchoolsMapTests.framework */; };
 		B53171CD2359CFC2005D3440 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53171CC2359CFC2005D3440 /* MapViewController.swift */; };
+		B53171D3235A5D7A005D3440 /* MapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53171D2235A5D7A005D3440 /* MapPresenter.swift */; };
+		B53171D5235A5FE7005D3440 /* MapViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53171D4235A5FE7005D3440 /* MapViewDelegate.swift */; };
 		B55D4ED42359CB39009DCFE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55D4ED32359CB39009DCFE3 /* AppDelegate.swift */; };
 		B55D4ED62359CB39009DCFE3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55D4ED52359CB39009DCFE3 /* SceneDelegate.swift */; };
 		B55D4ED82359CB39009DCFE3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55D4ED72359CB39009DCFE3 /* ContentView.swift */; };
@@ -36,6 +38,8 @@
 		925B74FABCE91B52CB41BA25 /* Pods-SchoolsMapTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SchoolsMapTests.release.xcconfig"; path = "Target Support Files/Pods-SchoolsMapTests/Pods-SchoolsMapTests.release.xcconfig"; sourceTree = "<group>"; };
 		AB1F933B111F9805D5C02D64 /* Pods_SchoolsMapTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SchoolsMapTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B53171CC2359CFC2005D3440 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		B53171D2235A5D7A005D3440 /* MapPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPresenter.swift; sourceTree = "<group>"; };
+		B53171D4235A5FE7005D3440 /* MapViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewDelegate.swift; sourceTree = "<group>"; };
 		B55D4ED02359CB39009DCFE3 /* SchoolsMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SchoolsMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B55D4ED32359CB39009DCFE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B55D4ED52359CB39009DCFE3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +94,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B53171D1235A5D27005D3440 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				B53171D2235A5D7A005D3440 /* MapPresenter.swift */,
+				B53171CC2359CFC2005D3440 /* MapViewController.swift */,
+				B53171D4235A5FE7005D3440 /* MapViewDelegate.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
 		B55D4EC72359CB39009DCFE3 = {
 			isa = PBXGroup;
 			children = (
@@ -113,9 +127,9 @@
 		B55D4ED22359CB39009DCFE3 /* SchoolsMap */ = {
 			isa = PBXGroup;
 			children = (
+				B53171D1235A5D27005D3440 /* Map */,
 				B55D4ED32359CB39009DCFE3 /* AppDelegate.swift */,
 				B55D4ED52359CB39009DCFE3 /* SceneDelegate.swift */,
-				B53171CC2359CFC2005D3440 /* MapViewController.swift */,
 				B55D4ED72359CB39009DCFE3 /* ContentView.swift */,
 				B55D4ED92359CB3A009DCFE3 /* Assets.xcassets */,
 				B55D4EDE2359CB3A009DCFE3 /* LaunchScreen.storyboard */,
@@ -310,8 +324,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B53171D5235A5FE7005D3440 /* MapViewDelegate.swift in Sources */,
 				B55D4ED42359CB39009DCFE3 /* AppDelegate.swift in Sources */,
 				B55D4ED62359CB39009DCFE3 /* SceneDelegate.swift in Sources */,
+				B53171D3235A5D7A005D3440 /* MapPresenter.swift in Sources */,
 				B53171CD2359CFC2005D3440 /* MapViewController.swift in Sources */,
 				B55D4ED82359CB39009DCFE3 /* ContentView.swift in Sources */,
 			);
