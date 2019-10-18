@@ -82,3 +82,5 @@ fastlane/test_output
 iOSInjectionProject/
 
 # End of https://www.gitignore.io/api/swift
+SchoolsMap.xcworkspace/contents.xcworkspacedata
+SchoolsMap.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
