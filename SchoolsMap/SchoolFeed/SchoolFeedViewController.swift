@@ -2,11 +2,11 @@
 import UIKit
 import GoogleMaps
 
-class MapViewController: UIViewController, MapViewDelegate {
+class SchoolFeedViewController: UIViewController, SchoolFeedViewDelegate {
     
     var mapView: GMSMapView?
     
-    let presenter = MapPresenter()
+    let presenter = SchoolFeedPresenter()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,9 +25,9 @@ class MapViewController: UIViewController, MapViewDelegate {
 
         let frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
         mapView = GMSMapView.map(withFrame: frame, camera: camera)
-        view = mapView
+        mapView?.delegate = self
         
-        presenter.viewDidLoad()
+        view = mapView
     }
     
     private func pointInMap(corner: Corner) -> CGPoint? {
@@ -52,4 +52,12 @@ class MapViewController: UIViewController, MapViewDelegate {
         return mapView.projection.coordinate(for: pointOfCoordinate)
     }
 
+}
+
+// MARK: - GMSMapViewDelegate
+extension SchoolFeedViewController: GMSMapViewDelegate {
+ 
+    func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition) {
+        presenter.didChangeMapPosition()
+    }
 }

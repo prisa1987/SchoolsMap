@@ -2,17 +2,13 @@
 import Foundation
 import GoogleMaps
 
-class MapPresenter {
+class SchoolFeedPresenter {
 
-    weak var viewDelegate: MapViewDelegate?
+    weak var viewDelegate: SchoolFeedViewDelegate?
     
-    let repository: MapRepository = MapRepositoryImplementation()
+    let repository: SchoolFeedRepository = SchoolFeedRepositoryImplementation()
     
-    func viewDidLoad() {
-        loadScholls()
-    }
-    
-    func loadScholls() {
+    private func loadSchools() {
         if let topLeftCoordinate = viewDelegate?.cornerCoordinate(corner: .topLeft),
             let bottomRightCoordinate = viewDelegate?.cornerCoordinate(corner: .bottomRight) {
             
@@ -24,5 +20,7 @@ class MapPresenter {
         }
     }
     
-    
+    func didChangeMapPosition() {
+        loadSchools()
+    }
 }

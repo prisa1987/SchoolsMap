@@ -23,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                window = UIWindow(frame: windowScene.coordinateSpace.bounds)
                window?.windowScene = windowScene
 
-               let navigationController = MapViewController()
+               let navigationController = SchoolFeedViewController()
                self.window?.rootViewController = navigationController
                self.window?.makeKeyAndVisible()
     }
