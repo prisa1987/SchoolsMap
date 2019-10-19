@@ -1,7 +1,11 @@
 
 import Foundation
 
-class MapRepository {
+protocol MapRepository {
+    func getSchools(from coordinates: [String:Double])
+}
+
+class MapRepositoryImplementation: MapRepository {
     
     let mapServices = MapServices()
     
@@ -11,7 +15,8 @@ class MapRepository {
                                        type: [School].self,
                                        httpMethod: .POST,
                                        body: jsonData) { (response) in
-                                           print(response)
+
+                                        
                                        }
                                        
     }
