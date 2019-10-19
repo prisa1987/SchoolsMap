@@ -1,6 +1,6 @@
 import GoogleMaps
 
-protocol MapViewDelegate: class {
+protocol SchoolFeedViewDelegate: class {
     func cornerCoordinate(corner: Corner) -> CLLocationCoordinate2D
 }
 

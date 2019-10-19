@@ -1,11 +1,11 @@
 
 import Foundation
 
-protocol MapRepository {
+protocol SchoolFeedRepository {
     func getSchools(from coordinates: [String:Double])
 }
 
-class MapRepositoryImplementation: MapRepository {
+class SchoolFeedRepositoryImplementation: SchoolFeedRepository {
     
     let mapServices = MapServices()
     
