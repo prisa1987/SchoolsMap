@@ -12,6 +12,7 @@ class MapViewController: UIViewController, MapViewDelegate {
         super.viewDidLoad()
         presenter.viewDelegate = self
         
+        
         let camera = GMSCameraPosition.camera(
             withLatitude: 50.54126776718752,
             longitude: -0.1391464811950982,
@@ -25,6 +26,8 @@ class MapViewController: UIViewController, MapViewDelegate {
         let frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
         mapView = GMSMapView.map(withFrame: frame, camera: camera)
         view = mapView
+        
+        presenter.viewDidLoad()
     }
     
     private func pointInMap(corner: Corner) -> CGPoint? {
@@ -33,14 +36,8 @@ class MapViewController: UIViewController, MapViewDelegate {
         switch corner {
         case .topLeft:
             return mapView.convert(CGPoint.zero, to: mapView)
-        case .topRight:
-            let point = CGPoint(x: mapView.frame.size.width, y: 0)
-            return mapView.convert(point, to: mapView)
-        case .bottomLeft:
-            let point = CGPoint(x: 0, y: mapView.frame.size.height)
-            return mapView.convert(point, to: mapView)
         case .bottomRight:
-            let point = CGPoint(x: mapView.frame.size.width, y: mapView.frame.size.width)
+            let point = CGPoint(x: mapView.frame.size.width, y: mapView.frame.size.height)
             return mapView.convert(point, to: mapView)
         }
     }
