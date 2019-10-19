@@ -6,7 +6,5 @@ protocol MapViewDelegate: class {
 
 enum Corner {
     case topLeft
-    case topRight
-    case bottomLeft
     case bottomRight
 }

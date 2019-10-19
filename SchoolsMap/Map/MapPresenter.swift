@@ -6,10 +6,23 @@ class MapPresenter {
 
     weak var viewDelegate: MapViewDelegate?
     
+    let repository: MapRepository = MapRepositoryImplementation()
+    
     func viewDidLoad() {
-        let topLeftCoordinate = viewDelegate?.cornerCoordinate(corner: .topLeft)
-        let topRightCoordinate = viewDelegate?.cornerCoordinate(corner: .topRight)
-        let bottomLeftCoordinate = viewDelegate?.cornerCoordinate(corner: .bottomLeft)
-        let bottomRightCoordinate = viewDelegate?.cornerCoordinate(corner: .bottomRight)
+        loadScholls()
     }
+    
+    func loadScholls() {
+        if let topLeftCoordinate = viewDelegate?.cornerCoordinate(corner: .topLeft),
+            let bottomRightCoordinate = viewDelegate?.cornerCoordinate(corner: .bottomRight) {
+            
+            let coordinates = ["latitudeNorth": topLeftCoordinate.latitude,
+                               "longitudeWest": topLeftCoordinate.longitude,
+                               "latitudeSouth": bottomRightCoordinate.latitude,
+                               "longitudeEast": bottomRightCoordinate.longitude]
+            repository.getSchools(from: coordinates)
+        }
+    }
+    
+    
 }
