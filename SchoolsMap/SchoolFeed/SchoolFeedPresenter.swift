@@ -6,8 +6,13 @@ class SchoolFeedPresenter {
 
     weak var viewDelegate: SchoolFeedViewDelegate?
     
-    let repository: SchoolFeedRepository = SchoolFeedRepositoryImplementation()
+    let interactor: SchoolFeedInteractor = SchoolFeedInteractor()
+    private (set) var schoolViewModels = [SchoolViewModel]()
     
+    func viewDidLoad() {
+        interactor.schoolFeedPresenterDelegate = self
+    }
+
     private func loadSchools() {
         if let topLeftCoordinate = viewDelegate?.cornerCoordinate(corner: .topLeft),
             let bottomRightCoordinate = viewDelegate?.cornerCoordinate(corner: .bottomRight) {
@@ -16,11 +21,21 @@ class SchoolFeedPresenter {
                                "longitudeWest": topLeftCoordinate.longitude,
                                "latitudeSouth": bottomRightCoordinate.latitude,
                                "longitudeEast": bottomRightCoordinate.longitude]
-            repository.getSchools(from: coordinates)
+            interactor.loadSchools(coordinates: coordinates)
         }
     }
     
     func didChangeMapPosition() {
         loadSchools()
     }
+    
+}
+
+// MARK: SchoolFeedPresenterDelegate
+extension SchoolFeedPresenter: SchoolFeedPresenterDelegate {
+    func didLoadSchools(shools: [SchoolViewModel]) {
+        self.schoolViewModels = shools
+        viewDelegate?.showShools(schools: shools)
+    }
+    
 }
