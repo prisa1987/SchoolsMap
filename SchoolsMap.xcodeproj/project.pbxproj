@@ -10,7 +10,7 @@
 		314CE7C7767D2DB89301AF18 /* Pods_SchoolsMapTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB1F933B111F9805D5C02D64 /* Pods_SchoolsMapTests.framework */; };
 		B53171CD2359CFC2005D3440 /* SchoolFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53171CC2359CFC2005D3440 /* SchoolFeedViewController.swift */; };
 		B53171D3235A5D7A005D3440 /* SchoolFeedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53171D2235A5D7A005D3440 /* SchoolFeedPresenter.swift */; };
-		B53171D5235A5FE7005D3440 /* SchoolFeedViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53171D4235A5FE7005D3440 /* SchoolFeedViewDelegate.swift */; };
+		B53171D5235A5FE7005D3440 /* SchoolFeedDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53171D4235A5FE7005D3440 /* SchoolFeedDelegate.swift */; };
 		B53171D8235A6651005D3440 /* MapServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53171D7235A6651005D3440 /* MapServices.swift */; };
 		B53171DA235A6672005D3440 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53171D9235A6672005D3440 /* Endpoint.swift */; };
 		B53171DC235A6871005D3440 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53171DB235A6871005D3440 /* Response.swift */; };
@@ -21,9 +21,9 @@
 		B53171EA235B2E28005D3440 /* SchoolFeedInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53171E9235B2E28005D3440 /* SchoolFeedInteractor.swift */; };
 		B53171ED235B4BDB005D3440 /* SchoolCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53171EC235B4BDB005D3440 /* SchoolCell.swift */; };
 		B53171EF235B4C26005D3440 /* SchoolCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B53171EE235B4C26005D3440 /* SchoolCell.xib */; };
+		B53171F1235BCA59005D3440 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53171F0235BCA59005D3440 /* BaseViewController.swift */; };
 		B55D4ED42359CB39009DCFE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55D4ED32359CB39009DCFE3 /* AppDelegate.swift */; };
 		B55D4ED62359CB39009DCFE3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55D4ED52359CB39009DCFE3 /* SceneDelegate.swift */; };
-		B55D4ED82359CB39009DCFE3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55D4ED72359CB39009DCFE3 /* ContentView.swift */; };
 		B55D4EDA2359CB3A009DCFE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B55D4ED92359CB3A009DCFE3 /* Assets.xcassets */; };
 		B55D4EDD2359CB3A009DCFE3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B55D4EDC2359CB3A009DCFE3 /* Preview Assets.xcassets */; };
 		B55D4EE02359CB3A009DCFE3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B55D4EDE2359CB3A009DCFE3 /* LaunchScreen.storyboard */; };
@@ -49,7 +49,7 @@
 		AB1F933B111F9805D5C02D64 /* Pods_SchoolsMapTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SchoolsMapTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B53171CC2359CFC2005D3440 /* SchoolFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolFeedViewController.swift; sourceTree = "<group>"; tabWidth = 3; };
 		B53171D2235A5D7A005D3440 /* SchoolFeedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolFeedPresenter.swift; sourceTree = "<group>"; };
-		B53171D4235A5FE7005D3440 /* SchoolFeedViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolFeedViewDelegate.swift; sourceTree = "<group>"; };
+		B53171D4235A5FE7005D3440 /* SchoolFeedDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolFeedDelegate.swift; sourceTree = "<group>"; };
 		B53171D7235A6651005D3440 /* MapServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapServices.swift; sourceTree = "<group>"; };
 		B53171D9235A6672005D3440 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		B53171DB235A6871005D3440 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
@@ -60,10 +60,10 @@
 		B53171E9235B2E28005D3440 /* SchoolFeedInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolFeedInteractor.swift; sourceTree = "<group>"; };
 		B53171EC235B4BDB005D3440 /* SchoolCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolCell.swift; sourceTree = "<group>"; };
 		B53171EE235B4C26005D3440 /* SchoolCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SchoolCell.xib; sourceTree = "<group>"; };
+		B53171F0235BCA59005D3440 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		B55D4ED02359CB39009DCFE3 /* SchoolsMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SchoolsMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B55D4ED32359CB39009DCFE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B55D4ED52359CB39009DCFE3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B55D4ED72359CB39009DCFE3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B55D4ED92359CB3A009DCFE3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B55D4EDC2359CB3A009DCFE3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B55D4EDF2359CB3A009DCFE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -122,7 +122,7 @@
 				B53171E9235B2E28005D3440 /* SchoolFeedInteractor.swift */,
 				B53171CC2359CFC2005D3440 /* SchoolFeedViewController.swift */,
 				B53171E3235B1F8F005D3440 /* SchoolFeedViewController.xib */,
-				B53171D4235A5FE7005D3440 /* SchoolFeedViewDelegate.swift */,
+				B53171D4235A5FE7005D3440 /* SchoolFeedDelegate.swift */,
 				B53171DD235A6BC3005D3440 /* SchoolFeedRepository.swift */,
 				B53171E5235B26E6005D3440 /* SchoolViewModel.swift */,
 			);
@@ -175,12 +175,12 @@
 				B53171D1235A5D27005D3440 /* SchoolFeed */,
 				B55D4ED32359CB39009DCFE3 /* AppDelegate.swift */,
 				B55D4ED52359CB39009DCFE3 /* SceneDelegate.swift */,
-				B55D4ED72359CB39009DCFE3 /* ContentView.swift */,
 				B55D4ED92359CB3A009DCFE3 /* Assets.xcassets */,
 				B55D4EDE2359CB3A009DCFE3 /* LaunchScreen.storyboard */,
 				B55D4EE12359CB3A009DCFE3 /* Info.plist */,
 				B55D4EDB2359CB3A009DCFE3 /* Preview Content */,
 				B53171DF235A6F2D005D3440 /* School.swift */,
+				B53171F0235BCA59005D3440 /* BaseViewController.swift */,
 			);
 			path = SchoolsMap;
 			sourceTree = "<group>";
@@ -373,7 +373,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B53171E6235B26E6005D3440 /* SchoolViewModel.swift in Sources */,
-				B53171D5235A5FE7005D3440 /* SchoolFeedViewDelegate.swift in Sources */,
+				B53171D5235A5FE7005D3440 /* SchoolFeedDelegate.swift in Sources */,
 				B55D4ED42359CB39009DCFE3 /* AppDelegate.swift in Sources */,
 				B53171ED235B4BDB005D3440 /* SchoolCell.swift in Sources */,
 				B53171DE235A6BC3005D3440 /* SchoolFeedRepository.swift in Sources */,
@@ -381,10 +381,10 @@
 				B53171EA235B2E28005D3440 /* SchoolFeedInteractor.swift in Sources */,
 				B55D4ED62359CB39009DCFE3 /* SceneDelegate.swift in Sources */,
 				B53171DC235A6871005D3440 /* Response.swift in Sources */,
+				B53171F1235BCA59005D3440 /* BaseViewController.swift in Sources */,
 				B53171D3235A5D7A005D3440 /* SchoolFeedPresenter.swift in Sources */,
 				B53171CD2359CFC2005D3440 /* SchoolFeedViewController.swift in Sources */,
 				B53171E0235A6F2D005D3440 /* School.swift in Sources */,
-				B55D4ED82359CB39009DCFE3 /* ContentView.swift in Sources */,
 				B53171D8235A6651005D3440 /* MapServices.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

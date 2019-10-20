@@ -1,5 +1,5 @@
 
-import UIKit
+import Foundation
 
 struct SchoolViewModel {
     let name: String

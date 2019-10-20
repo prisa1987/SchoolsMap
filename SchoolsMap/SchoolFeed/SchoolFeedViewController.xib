@@ -21,27 +21,27 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gOE-WB-9V9" userLabel="Map">
                     <rect key="frame" x="0.0" y="44" width="414" height="600"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" priority="750" constant="600" id="EvH-3i-TGV"/>
                     </constraints>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EMd-bX-3Ke">
-                    <rect key="frame" x="0.0" y="644" width="414" height="218"/>
+                    <rect key="frame" x="0.0" y="644" width="414" height="252"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="zXY-we-xiB" firstAttribute="trailing" secondItem="EMd-bX-3Ke" secondAttribute="trailing" id="0yJ-lQ-yjf"/>
-                <constraint firstItem="zXY-we-xiB" firstAttribute="trailing" secondItem="gOE-WB-9V9" secondAttribute="trailing" id="D0e-Zm-ui7"/>
+                <constraint firstAttribute="trailing" secondItem="EMd-bX-3Ke" secondAttribute="trailing" id="0yJ-lQ-yjf"/>
+                <constraint firstItem="I0N-XH-42o" firstAttribute="top" secondItem="gOE-WB-9V9" secondAttribute="top" id="8er-6b-BPz"/>
                 <constraint firstItem="EMd-bX-3Ke" firstAttribute="top" secondItem="gOE-WB-9V9" secondAttribute="bottom" id="EcZ-qQ-wrh"/>
-                <constraint firstItem="gOE-WB-9V9" firstAttribute="leading" secondItem="zXY-we-xiB" secondAttribute="leading" id="Il5-be-8sR"/>
-                <constraint firstItem="zXY-we-xiB" firstAttribute="bottom" secondItem="EMd-bX-3Ke" secondAttribute="bottom" id="Xm9-Zd-htM"/>
-                <constraint firstItem="EMd-bX-3Ke" firstAttribute="leading" secondItem="zXY-we-xiB" secondAttribute="leading" id="mTs-Yp-jQ4"/>
-                <constraint firstItem="gOE-WB-9V9" firstAttribute="top" secondItem="zXY-we-xiB" secondAttribute="top" id="qVs-7Y-ojs"/>
+                <constraint firstAttribute="bottom" secondItem="EMd-bX-3Ke" secondAttribute="bottom" id="Xm9-Zd-htM"/>
+                <constraint firstItem="gOE-WB-9V9" firstAttribute="trailing" secondItem="I0N-XH-42o" secondAttribute="trailing" id="bMA-zW-VuS"/>
+                <constraint firstItem="gOE-WB-9V9" firstAttribute="leading" secondItem="I0N-XH-42o" secondAttribute="leading" id="jCn-BA-hGq"/>
+                <constraint firstItem="EMd-bX-3Ke" firstAttribute="leading" secondItem="fwA-q9-xYc" secondAttribute="leading" id="mTs-Yp-jQ4"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="zXY-we-xiB"/>
+            <viewLayoutGuide key="safeArea" id="I0N-XH-42o"/>
             <point key="canvasLocation" x="-12" y="707"/>
         </view>
     </objects>

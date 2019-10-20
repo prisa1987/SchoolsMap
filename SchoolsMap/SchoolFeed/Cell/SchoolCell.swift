@@ -9,7 +9,7 @@ class SchoolCell: UITableViewCell {
     static let identifier: String = "SchoolCell"
 
     func configure(school: SchoolViewModel) {
-        schoolName.text = school.name
+        schoolName.text = "•    \(school.name)"
     }
     
 }

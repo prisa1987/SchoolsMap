@@ -2,7 +2,11 @@ import GoogleMaps
 
 protocol SchoolFeedViewDelegate: class {
     func cornerCoordinate(corner: Corner) -> CLLocationCoordinate2D
-    func showShools(schools: [SchoolViewModel])
+    func showSchools(schoolViewModels: [SchoolViewModel])
+}
+
+protocol SchoolFeedPresenterDelegate: class {
+     func didLoadSchools(schools: [SchoolViewModel])
 }
 
 enum Corner {

@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>asdf</string>
+	<string>Allow location</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Allow location</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>

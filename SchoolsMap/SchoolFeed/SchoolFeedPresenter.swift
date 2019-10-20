@@ -33,9 +33,9 @@ class SchoolFeedPresenter {
 
 // MARK: SchoolFeedPresenterDelegate
 extension SchoolFeedPresenter: SchoolFeedPresenterDelegate {
-    func didLoadSchools(shools: [SchoolViewModel]) {
-        self.schoolViewModels = shools
-        viewDelegate?.showShools(schools: shools)
+    func didLoadSchools(schools: [SchoolViewModel]) {
+        self.schoolViewModels = schools
+        viewDelegate?.showSchools(schoolViewModels: schools)
     }
     
 }

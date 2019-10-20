@@ -2,23 +2,25 @@
 import UIKit
 import GoogleMaps
 
-class SchoolFeedViewController: UIViewController, SchoolFeedViewDelegate {
+class SchoolFeedViewController: BaseViewController {
 
     @IBOutlet weak var schoolsTableView: UITableView!
     @IBOutlet weak var mapView: UIView!
     
-    private var mapContentView: GMSMapView?
+    private var gmsMapView: GMSMapView?
     private var schoolViewModels: [SchoolViewModel] = []
     
     private let locationManager = CLLocationManager()
     private let presenter = SchoolFeedPresenter()
     private var schoolMarkers = [GMSMarker]()
     private let mapZoom: Float = 16
-    private let defualtCoordinate = CLLocationCoordinate2D(latitude: 50.54126776718752,
-                                                           longitude: -0.1391464811950982)
+    private let defualtCoordinate = CLLocationCoordinate2D(latitude: 51.52771,
+                                                           longitude: -0.140616)
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter.viewDelegate = self
+        presenter.viewDidLoad()
         setupMap()
         setupSchoolFeed()
     }
@@ -28,10 +30,7 @@ class SchoolFeedViewController: UIViewController, SchoolFeedViewDelegate {
         locationManager.activityType = .automotiveNavigation
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
-        
-        presenter.viewDelegate = self
-        presenter.viewDidLoad()
-        
+   
         let camera = GMSCameraPosition.camera(
             withLatitude: defualtCoordinate.latitude,
             longitude: defualtCoordinate.longitude,
@@ -40,24 +39,31 @@ class SchoolFeedViewController: UIViewController, SchoolFeedViewDelegate {
         
         let screenRect = UIScreen.main.bounds
         let screenWidth = screenRect.size.width
-        let screenHeight: CGFloat = screenRect.size.height * 2 / 3
         
-        let frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+        let viewWithOutNav =  UIScreen.main.bounds.height - (self.navigationController?.navigationBar.frame.height ?? 0)
+        let screenHeight: CGFloat = (viewWithOutNav * 2) / 3
+
+        let frame = CGRect(x: 0,
+                           y: 0,
+                           width: screenWidth,
+                           height: screenHeight)
+
         let gmsMapView = GMSMapView.map(withFrame: frame, camera: camera)
+        gmsMapView.translatesAutoresizingMaskIntoConstraints = false
         gmsMapView.delegate = self
         gmsMapView.isMyLocationEnabled = true
-        mapView.addSubview(gmsMapView)
-        mapView.translatesAutoresizingMaskIntoConstraints = false
         
+        mapView.addSubview(gmsMapView)
+        gmsMapView.translatesAutoresizingMaskIntoConstraints = false
         gmsMapView.leadingAnchor.constraint(equalTo: mapView.leadingAnchor).isActive = true
         gmsMapView.trailingAnchor.constraint(equalTo: mapView.trailingAnchor).isActive = true
         gmsMapView.topAnchor.constraint(equalTo: mapView.topAnchor).isActive = true
         gmsMapView.bottomAnchor.constraint(equalTo: mapView.bottomAnchor).isActive = true
+        mapView.heightAnchor.constraint(equalToConstant: screenHeight).isActive = true
         
-        mapContentView = gmsMapView
-        mapContentView?.isHidden  = true
-        mapContentView?.settings.myLocationButton = true
-
+        self.gmsMapView = gmsMapView
+        self.gmsMapView?.isHidden  = true
+        self.gmsMapView?.settings.myLocationButton = true
     }
     
     private func setupSchoolFeed() {
@@ -89,9 +95,13 @@ class SchoolFeedViewController: UIViewController, SchoolFeedViewDelegate {
         return GMSMarker.markerImage(with: .red)
     }
     
-    // MARK: SchoolFeedViewDelegate
+}
+
+// MARK: SchoolFeedViewDelegate
+extension SchoolFeedViewController: SchoolFeedViewDelegate  {
+    
     func cornerCoordinate(corner: Corner) -> CLLocationCoordinate2D {
-        guard let mapContentView = mapContentView,
+        guard let mapContentView = gmsMapView,
             let point = pointInMap(corner: corner)
             else { return CLLocationCoordinate2D.init() }
         
@@ -99,23 +109,22 @@ class SchoolFeedViewController: UIViewController, SchoolFeedViewDelegate {
         return mapContentView.projection.coordinate(for: pointOfCoordinate)
     }
     
-    func showShools(schools: [SchoolViewModel]) {
+    func showSchools(schoolViewModels: [SchoolViewModel]) {
         schoolsTableView.reloadData()
-        mapContentView?.clear()
+        gmsMapView?.clear()
         schoolMarkers = []
         
-        for school in schools {
+        for school in schoolViewModels {
             let latitude = school.latitude
             let longitude = school.longitude
             let marker = GMSMarker()
             marker.title = school.name
             marker.position = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-            marker.map = mapContentView
+            marker.map = gmsMapView
             
             schoolMarkers.append(marker)
         }
     }
-    
 }
 
 // MARK: GMSMapViewDelegate
@@ -136,11 +145,37 @@ extension SchoolFeedViewController: GMSMapViewDelegate {
     }
 }
 
+// MARK: CLLocationManagerDelegate
+extension SchoolFeedViewController: CLLocationManagerDelegate {
+
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+
+        guard let location: CLLocation = locations.last else { return }
+
+        let camera = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude,
+                                              longitude: location.coordinate.longitude,
+                                              zoom: mapZoom)
+
+        gmsMapView?.animate(to: camera)
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        switch status {
+        case .authorizedAlways: fallthrough
+        case .authorizedWhenInUse:
+            gmsMapView?.isHidden = false
+            manager.startUpdatingLocation()
+        default:
+            gmsMapView?.isHidden = false
+        }
+    }
+
+}
+
 // MARK: UITableViewDelegate
 extension SchoolFeedViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
         
         for marker in schoolMarkers {
             marker.icon = unselectedMarkerImage()
@@ -148,8 +183,7 @@ extension SchoolFeedViewController: UITableViewDelegate {
         
         let selectedMarker = schoolMarkers[indexPath.row]
         selectedMarker.icon = selectedMarkerImage()
-        mapContentView?.selectedMarker = selectedMarker
-        
+        gmsMapView?.selectedMarker = selectedMarker
     }
     
 }
@@ -166,33 +200,4 @@ extension SchoolFeedViewController: UITableViewDataSource {
         return cell ?? UITableViewCell()
     }
     
-}
-
-
-// MARK: CLLocationManagerDelegate
-extension SchoolFeedViewController: CLLocationManagerDelegate {
-
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-
-        guard let location: CLLocation = locations.last else { return }
-
-        let camera = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude,
-                                              longitude: location.coordinate.longitude,
-                                              zoom: mapZoom)
-
-        mapContentView?.animate(to: camera)
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        switch status {
-        case .authorizedAlways: fallthrough
-        case .authorizedWhenInUse:
-            mapContentView?.isHidden = false
-            manager.startUpdatingLocation()
-        default:
-            mapContentView?.isHidden = false
-        }
-    }
-
 }

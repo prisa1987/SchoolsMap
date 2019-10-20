@@ -2,16 +2,11 @@
 import Foundation
 import UIKit
 
-protocol SchoolFeedPresenterDelegate: class {
-     func didLoadSchools(shools: [SchoolViewModel])
-}
-
 class SchoolFeedInteractor {
     
-    var schools = [School]()
-    
     weak var schoolFeedPresenterDelegate: SchoolFeedPresenterDelegate?
-    let repository: SchoolFeedRepository = SchoolFeedRepositoryImplementation()
+    private lazy var repository = SchoolFeedRepositoryImplementation()
+    private var schools = [School]()
     
     func loadSchools(coordinates: [String: Double]) {
         repository.getSchools(from: coordinates) { [weak self] schools in
@@ -25,7 +20,7 @@ class SchoolFeedInteractor {
             }
             
             DispatchQueue.main.async {
-                self?.schoolFeedPresenterDelegate?.didLoadSchools(shools: viewModels)
+                self?.schoolFeedPresenterDelegate?.didLoadSchools(schools: viewModels)
             }
             
         }
